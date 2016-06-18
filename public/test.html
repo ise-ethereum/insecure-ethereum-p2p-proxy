@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Proxy</title>
+  </head>
+  <body>
+    <h1>Test</h1>
+    <p>My address: <span id="myAddress">Connecting...</span></p>
+
+    <h2>Send a message</h2>
+
+    <p><input type="text" id="toAddress" placeholder="Receiver address"></p>
+    <p><input type="text" id="input" placeholder="Type a message"></p>
+    <p><button onClick="send()">Send</button></p>
+
+    <h2>Received messages:</h2>
+    <ul id="receivedMessages"></ul>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/test.js"></script>
+  </body>
+</html>
+
