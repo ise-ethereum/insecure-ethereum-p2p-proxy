@@ -1,8 +1,9 @@
 # Insecure Ethereum P2P Proxy
 
 This is a stupid simple WebSocket proxy written in Node to facilitate
-direct communication between two peers based on some kind of address. The IP
-address does not need to be known to the peers.
+direct communication between two peers based on some kind of address (e.g. an
+Ethereum account address). Peers do not have to know each other's IP address
+for this.
 
 It is intended to be used for development of off-chain Ethereum distributed
 applications to send messages between clients.
@@ -44,7 +45,7 @@ __Only use this for development!__
 Check out the tests for a connection example, or visit `localhost:8090/test.html`
 for an interactive in-browser test.
 
-The port defaults to 8090, but can configure it in `index.js`.
+The port defaults to 8090, but you can configure it in `index.js`.
 
 ## Tests
 
