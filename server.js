@@ -33,13 +33,14 @@ function createServer(port) {
     /* Relay a message */
     socket.on('send', function(data) {
       var toAddress = data.to;
+      var fromAddress = data.from;
       var payload = data.payload;
       if (!toAddress || !payload) {
           console.error('Error: Cannot send without address or payload.');
       }
       // Send payload to room of receiver
-      socket.to(toAddress).emit('receive', payload);
-      util.log('Sent to ' + toAddress);
+      socket.to(toAddress).emit('receive', data);
+      util.log('New message:\n  from: ' + fromAddress + '\n  to: ' + toAddress + '\n  topic: ' + data.topic);
     });
 
   });

@@ -27,7 +27,7 @@ describe('P2P Proxy', function() {
           socket2.emit('register', { address: address2});
           setTimeout(function(){
             // Step 2, send from socket 2 to socket 1
-            socket2.emit('send', {to: address1, payload: {text: 'Hello from number two'}});
+            socket2.emit('send', {from: address2, to: address1, payload: {text: 'Hello from number two'}});
           }, 150);
       });
       socket3.on('connect', function() {
@@ -36,17 +36,19 @@ describe('P2P Proxy', function() {
 
       // Step 3, received at socket 1
       socket1.on('receive', function(data) {
-          assert.equal(data.text, 'Hello from number two');
+          assert.equal(data.payload.text, 'Hello from number two');
+          assert.equal(data.from, address2);
           setTimeout(function() {
             // Step 4, send from socket 1 to socket 2
-            socket1.emit('send', {to: address2, payload: {text: 'Hello from number one'}});
+            socket1.emit('send', {from: address1, to: address2, payload: {text: 'Hello from number one'}});
           }, 150);
           plan.ok();
       });
 
       // Step 5, receive on socket 2
       socket2.on('receive', function(data) {
-          assert.equal(data.text, 'Hello from number one');
+          assert.equal(data.payload.text, 'Hello from number one');
+          assert.equal(data.from, address1);
           plan.ok();
       });
 
