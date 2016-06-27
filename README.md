@@ -39,8 +39,8 @@ __Only use this for development!__
 
 ## Usage
 
-    npm install
-    npm start
+    npm install ise-ethereum/insecure-ethereum-p2p-proxy
+    ./node_modules/.bin/insecure-ethereum-p2p-proxy
 
 Check out the tests for a connection example, or visit `localhost:8090/test.html`
 for an interactive in-browser test.

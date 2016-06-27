@@ -1,6 +1,6 @@
 {
   "name": "insecure-ethereum-p2p-proxy",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A stupid simple proxy that enables communication similarly as Whisper.",
   "dependencies": {
     "express": "^4.14.0",
@@ -14,5 +14,6 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha"
-  }
+  },
+  "bin": "./index.js"
 }
