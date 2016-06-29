@@ -15,5 +15,5 @@
     "start": "node index.js",
     "test": "mocha"
   },
-  "bin": "./index.js"
+  "bin": "node index.js"
 }
