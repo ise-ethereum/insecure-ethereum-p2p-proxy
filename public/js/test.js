@@ -13,7 +13,7 @@ function generateUUID(){
 
 var myAddress = generateUUID();
 
-var socket = io.connect('http://localhost:8090');
+var socket = io.connect('http://' + window.location.hostname + ':' + window.location.port);
 
 socket.on('connect', function() {
     console.log('Socket connected.');
