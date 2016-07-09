@@ -9,7 +9,7 @@ function createServer(port) {
   server.listen(port);
   util.log("Listening on :" + port);
 
-  app.use(express.static('public'));
+  app.use(express.static(__dirname + '/public'));
 
   io.on('connection', function(socket) {
 

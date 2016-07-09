@@ -39,8 +39,13 @@ __Only use this for development!__
 
 ## Usage
 
+Install it to a local project (a directory that has a packages.json file):
+
     npm install ise-ethereum/insecure-ethereum-p2p-proxy
     ./node_modules/.bin/insecure-ethereum-p2p-proxy
+
+You could also install it globally, but since this is so experimental it doesn't seem
+worth that.
 
 Check out the tests for a connection example, or visit `localhost:8090/test.html`
 for an interactive in-browser test.
