@@ -18,7 +18,7 @@ var socket = io.connect('http://' + window.location.hostname + ':' + window.loca
 socket.on('connect', function() {
     console.log('Socket connected.');
     console.log('Registering with address:', myAddress);
-    socket.emit('register', { address: myAddress});
+    socket.emit('register', {address: myAddress});
     document.getElementById('myAddress').innerHTML = myAddress;
 });
 
@@ -29,7 +29,7 @@ socket.on('error', function(data) {
 socket.on('receive', function(data) {
     var container = document.getElementById('receivedMessages');
     var item = document.createElement("li");
-    var node = document.createTextNode(data.text);
+    var node = document.createTextNode(data.payload.text);
     item.appendChild(node);
     container.appendChild(item);
 });
